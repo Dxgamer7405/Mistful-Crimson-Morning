@@ -1,0 +1,21 @@
+{
+	"songs": [
+		["Bold or Brash", "starved", [0, 0, 255]]
+	],
+
+	"weekCharacters": [
+		"",
+		"bf",
+		"gf"
+	],
+	"weekBackground": "stage",
+
+	"storyName": "Teuthida's Chamber",
+	"difficulties": "Hard",
+	"weekBefore": "tutorial",
+	"weekName": "Teuthida",
+	"startUnlocked": true,
+
+	"hideStoryMode": true,
+	"hideFreeplay": false
+}

@@ -52,58 +52,76 @@ class CreditsState extends MusicBeatState
 		grpOptions = new FlxTypedGroup<Alphabet>();
 		add(grpOptions);
 
-		#if MODS_ALLOWED
-		var path:String = SUtil.getPath() + 'modsList.txt';
-		if(FileSystem.exists(path))
-		{
-			var leMods:Array<String> = CoolUtil.coolTextFile(path);
-			for (i in 0...leMods.length)
-			{
-				if(leMods.length > 1 && leMods[0].length > 0) {
-					var modSplit:Array<String> = leMods[i].split('|');
-					if(!Paths.ignoreModFolders.contains(modSplit[0].toLowerCase()) && !modsAdded.contains(modSplit[0]))
-					{
-						if(modSplit[1] == '1')
-							pushModCreditsToList(modSplit[0]);
-						else
-							modsAdded.push(modSplit[0]);
-					}
-				}
-			}
-		}
-
-		var arrayOfFolders:Array<String> = Paths.getModDirectories();
-		arrayOfFolders.push('');
-		for (folder in arrayOfFolders)
-		{
-			pushModCreditsToList(folder);
-		}
-		#end
-
 		var pisspoop:Array<Array<String>> = [ //Name - Icon name - Description - Link - BG Color
-			['Psych Engine Android'],
-			['Saw (M.A. Jigsaw)',	'saw',				'Main Programmer of Psych Engine Android',					'https://www.youtube.com/channel/UC2Sk7vtPzOvbVzdVTWrribQ', 	'F73838'],
+			["Android Porter"],
+			['Dxgamer',			'hi',			"I Ported This Mod",						'https://youtube.com/Dxgamer7405',	'FF0000'],
+			[''],
+			['Mistful Crimson Morning'],
+			['DevilousHavoc',			'no',			'Owner, Charter',							'https://www.youtube.com/watch?v=csJONKQa2JI',		'CF2D2D'],
+			['jredwick',				'no',			'Owner, Main Coder, Part Time Artist',		'https://www.youtube.com/watch?v=csJONKQa2JI',		'CF2D2D'],
+			['Hyper',					'no',			'Director, Charter',						'https://www.youtube.com/watch?v=csJONKQa2JI',		'CF2D2D'],
+			['Betasheep28',				'no',			'Director, Main Artist',					'https://www.youtube.com/watch?v=csJONKQa2JI',		'CF2D2D'],
+			['Frylock',					'no',			'Coder',									'https://www.youtube.com/watch?v=csJONKQa2JI',		'CF2D2D'],
+			['PJ9D',					'no',			'Coder',									'https://www.youtube.com/watch?v=csJONKQa2JI',		'CF2D2D'],
+			['Anonymous',				'no',			'Coder + Additional Help',					'https://www.youtube.com/watch?v=csJONKQa2JI',		'CF2D2D'],
+			['pattydecaffy',			'no',			'Composer',									'https://www.youtube.com/watch?v=csJONKQa2JI',		'CF2D2D'],
+			['Olimac31',				'no',			'Composer',									'https://www.youtube.com/watch?v=csJONKQa2JI',		'CF2D2D'],
+			['blueglue',				'no',			'Composer',									'https://www.youtube.com/watch?v=csJONKQa2JI',		'CF2D2D'],
+			['vruzzen',					'no',			'Composer',									'https://www.youtube.com/watch?v=csJONKQa2JI',		'CF2D2D'],
+			['CalciumLmao',				'no',			'Composer',									'https://www.youtube.com/watch?v=csJONKQa2JI',		'CF2D2D'],
+			['Sandi',					'no',			'Composer',									'https://www.youtube.com/watch?v=csJONKQa2JI',		'CF2D2D'],
+			['banana B)',				'no',			'Composer',									'https://www.youtube.com/watch?v=csJONKQa2JI',		'CF2D2D'],
+			['END_SELLA',				'no',			'Composer',									'https://www.youtube.com/watch?v=csJONKQa2JI',		'CF2D2D'],
+			['Blue',					'no',			'Composer (Snail House Creator)',			'https://www.youtube.com/watch?v=csJONKQa2JI',		'CF2D2D'],
+			['CoolmanAJF',				'no',			'Composer, Charter, Assist Coder',			'https://www.youtube.com/watch?v=csJONKQa2JI',		'CF2D2D'],
+			['FireDemonWalker',			'no',			'Artist',									'https://www.youtube.com/watch?v=csJONKQa2JI',		'CF2D2D'],
+			['Offical Unfunny Person',	'no',			'Artist',									'https://www.youtube.com/watch?v=csJONKQa2JI',		'CF2D2D'],
+			['Numberless',				'no',			'Artist',									'https://www.youtube.com/watch?v=csJONKQa2JI',		'CF2D2D'],
+			['cosmicalarcade',			'no',			'Artist',									'https://www.youtube.com/watch?v=csJONKQa2JI',		'CF2D2D'],
+			['LuXoiD_01',				'no',			'Artist',									'https://www.youtube.com/watch?v=csJONKQa2JI',		'CF2D2D'],
+			['XXXMickeyTesticles5480',	'no',			'Artist',									'https://www.youtube.com/watch?v=csJONKQa2JI',		'CF2D2D'],
+			['Colonio',					'no',			'Artist',									'https://www.youtube.com/watch?v=csJONKQa2JI',		'CF2D2D'],
+			['TopTophatter',			'no',			'Artist, Animator',							'https://www.youtube.com/watch?v=csJONKQa2JI',		'CF2D2D'],
+			['weedeet',					'no',			'Artist',									'https://www.youtube.com/watch?v=csJONKQa2JI',		'CF2D2D'],
+			['Gnet',					'no',			'Artist, Animator',							'https://www.youtube.com/watch?v=csJONKQa2JI',		'CF2D2D'],
+			['AshyTown',				'no',			'Concept Artist',							'https://www.youtube.com/watch?v=csJONKQa2JI',		'CF2D2D'],
+			['Nazery',					'no',			'Artist',									'https://www.youtube.com/watch?v=csJONKQa2JI',		'CF2D2D'],
+			['Stonesteve',				'no',			'Artist',									'https://www.youtube.com/watch?v=csJONKQa2JI',		'CF2D2D'],
+			['Manny204553',				'no',			'Artist (3D Modeler)',						'https://www.youtube.com/watch?v=csJONKQa2JI',		'CF2D2D'],
+			['Nugget',					'no',			'Artist',									'https://www.youtube.com/watch?v=csJONKQa2JI',		'CF2D2D'],
+			['Adam Navares',			'no',			'Artist (Joe Notes)',						'https://www.youtube.com/watch?v=csJONKQa2JI',		'CF2D2D'],
+			['HoneyFox',				'no',			'Artist + Emotional Support',				'https://www.youtube.com/watch?v=csJONKQa2JI',		'CF2D2D'],
+			['OstrichIsNotFunny',		'no',			'Charter',									'https://www.youtube.com/watch?v=csJONKQa2JI',		'CF2D2D'],
+			['Icexglitch',				'no',			'Charter',									'https://www.youtube.com/watch?v=csJONKQa2JI',		'CF2D2D'],
+			['skwoop',					'no',			'Charter',									'https://www.youtube.com/watch?v=csJONKQa2JI',		'CF2D2D'],
+			['Demonic',					'no',			'Charter',									'https://www.youtube.com/watch?v=csJONKQa2JI',		'CF2D2D'],
+			['Larry',					'no',			'VA (Squidward)',							'https://www.youtube.com/watch?v=csJONKQa2JI',		'CF2D2D'],
+			['Banbuds',					'no',			'VA (Plankton)',							'https://www.youtube.com/watch?v=csJONKQa2JI',		'CF2D2D'],
+			['BluBellaVA',				'no',			'VA',										'https://www.youtube.com/watch?v=csJONKQa2JI',		'CF2D2D'],
+			['Seifo',					'no',			'VA (MC Spongebob), Chromatic Maker',		'https://www.youtube.com/watch?v=csJONKQa2JI',		'CF2D2D'],
+			['Crumby',					'no',			'Chromatic Maker',							'https://www.youtube.com/watch?v=csJONKQa2JI',		'CF2D2D'],
+			['RubysArt_',				'no',			'Chromatic Maker',							'https://www.youtube.com/watch?v=csJONKQa2JI',		'CF2D2D'],
 			[''],
 			['Psych Engine Team'],
-			['Shadow Mario',		'shadowmario',		'Main Programmer of Psych Engine',							'https://twitter.com/Shadow_Mario_',	'444444'],
-			['RiverOaken',			'riveroaken',		'Main Artist/Animator of Psych Engine',						'https://twitter.com/RiverOaken',		'C30085'],
-			['shubs',				'shubs',			'Additional Programmer of Psych Engine',					'https://twitter.com/yoshubs',			'279ADC'],
+			['Shadow Mario',			'no',			'Main Programmer of Psych Engine',							'https://twitter.com/Shadow_Mario_',	'CF2D2D'],
+			['RiverOaken',				'no',			'Main Artist/Animator of Psych Engine',						'https://twitter.com/RiverOaken',		'CF2D2D'],
+			['shubs',					'no',			'Additional Programmer of Psych Engine',					'https://twitter.com/yoshubs',			'CF2D2D'],
 			[''],
 			['Former Engine Members'],
-			['bb-panzu',			'bb-panzu',			'Ex-Programmer of Psych Engine',							'https://twitter.com/bbsub3',			'389A58'],
+			['bb-panzu',				'no',			'Ex-Programmer of Psych Engine',							'https://twitter.com/bbsub3',			'CF2D2D'],
 			[''],
 			['Engine Contributors'],
-			['iFlicky',				'iflicky',			'Composer of Psync and Tea Time\nMade the Dialogue Sounds',	'https://twitter.com/flicky_i',			'AA32FE'],
-			['SqirraRNG',			'gedehari',			'Chart Editor\'s Sound Waveform base',						'https://twitter.com/gedehari',			'FF9300'],
-			['PolybiusProxy',		'polybiusproxy',	'.MP4 Video Loader Extension',								'https://twitter.com/polybiusproxy',	'FFEAA6'],
-			['Keoiki',				'keoiki',			'Note Splash Animations',									'https://twitter.com/Keoiki_',			'FFFFFF'],
-			['Smokey',				'smokey',			'Spritemap Texture Support',								'https://twitter.com/Smokey_5_',		'4D5DBD'],
+			['iFlicky',					'no',			'Composer of Psync and Tea Time\nMade the Dialogue Sounds',	'https://twitter.com/flicky_i',			'CF2D2D'],
+			['SqirraRNG',				'no',			'Chart Editor\'s Sound Waveform base',						'https://twitter.com/gedehari',			'CF2D2D'],
+			['PolybiusProxy',			'no',			'.MP4 Video Loader Extension',								'https://twitter.com/polybiusproxy',	'CF2D2D'],
+			['Keoiki',					'no',			'Note Splash Animations',									'https://twitter.com/Keoiki_',			'CF2D2D'],
+			['Smokey',					'no',			'Spritemap Texture Support',								'https://twitter.com/Smokey_5_',		'CF2D2D'],
 			[''],
 			["Funkin' Crew"],
-			['ninjamuffin99',		'ninjamuffin99',	"Programmer of Friday Night Funkin'",						'https://twitter.com/ninja_muffin99',	'F73838'],
-			['PhantomArcade',		'phantomarcade',	"Animator of Friday Night Funkin'",							'https://twitter.com/PhantomArcade3K',	'FFBB1B'],
-			['evilsk8r',			'evilsk8r',			"Artist of Friday Night Funkin'",							'https://twitter.com/evilsk8r',			'53E52C'],
-			['kawaisprite',			'kawaisprite',		"Composer of Friday Night Funkin'",							'https://twitter.com/kawaisprite',		'6475F3']
+			['ninjamuffin99',			'no',			"Programmer of Friday Night Funkin'",						'https://twitter.com/ninja_muffin99',	'CF2D2D'],
+			['PhantomArcade',			'no',			"Animator of Friday Night Funkin'",							'https://twitter.com/PhantomArcade3K',	'CF2D2D'],
+			['evilsk8r',				'no',			"Artist of Friday Night Funkin'",							'https://twitter.com/evilsk8r',			'CF2D2D'],
+			['kawaisprite',				'no',			"Composer of Friday Night Funkin'",							'https://twitter.com/kawaisprite',		'CF2D2D']
 		];
 		
 		for(i in pisspoop){
@@ -162,11 +180,6 @@ class CreditsState extends MusicBeatState
 		bg.color = getCurrentBGColor();
 		intendedColor = bg.color;
 		changeSelection();
-
-		#if android
-		addVirtualPad(UP_DOWN, A_B);
-		#end
-
 		super.create();
 	}
 
@@ -298,31 +311,6 @@ class CreditsState extends MusicBeatState
 		descBox.setGraphicSize(Std.int(descText.width + 20), Std.int(descText.height + 25));
 		descBox.updateHitbox();
 	}
-
-	#if MODS_ALLOWED
-	private var modsAdded:Array<String> = [];
-	function pushModCreditsToList(folder:String)
-	{
-		if(modsAdded.contains(folder)) return;
-
-		var creditsFile:String = null;
-		if(folder != null && folder.trim().length > 0) creditsFile = Paths.mods(folder + '/data/credits.txt');
-		else creditsFile = Paths.mods('data/credits.txt');
-
-		if (FileSystem.exists(creditsFile))
-		{
-			var firstarray:Array<String> = File.getContent(creditsFile).split('\n');
-			for(i in firstarray)
-			{
-				var arr:Array<String> = i.replace('\\n', '\n').split("::");
-				if(arr.length >= 5) arr.push(folder);
-				creditsStuff.push(arr);
-			}
-			creditsStuff.push(['']);
-		}
-		modsAdded.push(folder);
-	}
-	#end
 
 	function getCurrentBGColor() {
 		var bgColor:String = creditsStuff[curSelected][4];

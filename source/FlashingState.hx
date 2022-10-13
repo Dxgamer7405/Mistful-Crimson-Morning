@@ -31,6 +31,9 @@ class FlashingState extends MusicBeatState
 		warnText.setFormat(Paths.font("Krabby Patty.ttf"), 24, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		warnText.borderSize = 2;
 		add(warnText);
+    #if android
+  	addVirtualPad(NONE, A);
+    #end
 	}
 
 	override function update(elapsed:Float)
