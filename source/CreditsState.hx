@@ -54,7 +54,7 @@ class CreditsState extends MusicBeatState
 
 		var pisspoop:Array<Array<String>> = [ //Name - Icon name - Description - Link - BG Color
 			["Android Porter"],
-			['Dxgamer',			'hi',			"I Ported This Mod",						'https://youtube.com/Dxgamer7405',	'FF0000'],
+			['Dxgamer',			'dxgamer',			"I Ported This Mod",						'https://youtube.com/Dxgamer7405',	'FF0000'],
 			[''],
 			['Mistful Crimson Morning'],
 			['DevilousHavoc',			'no',			'Owner, Charter',							'https://www.youtube.com/watch?v=csJONKQa2JI',		'CF2D2D'],
